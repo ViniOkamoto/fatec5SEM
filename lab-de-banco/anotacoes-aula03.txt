@@ -1,0 +1,61 @@
+Inner Join
+SELECT Orders.OrderID, Customers.CustomerName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+
+--- recomendável usar ALIAS - correlação
+
+SELECT column_name
+FROM table1 <alias1>
+inner join table2 <alias2>
+ON (<alias1>.column_name = <alias2>.column_name)
+INNER JOIN table3 <alias3>
+ON (<alias2>.column_name = <alias3>.column_name);
+
+-----------------
+LEFT - OUTER JOIN
+Mesma sintaxe, traz resultado diferente
+OUTER é opcional
+
+SELECT column_name
+FROM table1 <alias1>
+inner join table2 <alias2>
+ON (<alias1>.column_name = <alias2>.column_name)
+LEFT JOIN table3 <alias3>
+ON (<alias2>.column_name = <alias3>.column_name);
+
+-----------------
+UNION / UNION ALL
+Union tira duplicados (faz um DISTINCT)
+Union All traz duplicados
+ 
+SELECT first_name, last_name, email, 'contact'
+FROM contacts
+UNION
+SELECT first_name, last_name, email, 'employee'
+FROM employees;
+
+----------------
+INTERSECT
+
+SELECT last_name FROM contracts
+INTERSECT
+SELECT last_name FROM employees
+ORDER BY last_name;
+
+----------------
+MINUS
+tem SGBD que nao suporta o MINUS (MySql)
+excludente
+
+----------------
+FUNCOES AGREGADAS
+MIN()
+MAC()
+AVG()
+COUNT()
+SUM(<nome da coluna> ou <numero>)
+nao usar * dentro dos programas
+quando utilizada em conjunto com outras colunas, deve vir com GROUP BY para todas as colunas
+
+
