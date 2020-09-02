@@ -1,0 +1,5 @@
+Mensagem
+-----
+Computador envia com informações - endereço TCP/IP da maquina de destino, número da porta de comunicação - outro Computador recebe
+
+
