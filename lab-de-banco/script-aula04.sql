@@ -10,6 +10,12 @@ CREATE TABLE Peca (
     CidadePeca VARCHAR(10) NOT NULL
 );
 
+ALTER TABLE Embarq DROP CONSTRAINT FK_Embarq_Peca;
+ALTER TABLE Embarq MODIFY COLUMN CodPeca CHAR(6);
+ALTER TABLE Peca MODIFY COLUMN CodPeca CHAR(6);
+ALTER TABLE Embarq ADD CONSTRAINT FK_Embarq_Peca FOREIGN KEY (CodPeca) REFERENCES Peca(CodPeca) ON DELETE restrict;
+
+
 CREATE TABLE Fornec (
     CodFornec CHAR(2) PRIMARY KEY NOT NULL,
     NomeFornec VARCHAR(10) NOT NULL,
@@ -52,9 +58,9 @@ SELECT COUNT(CodFornec) FROM Fornec WHERE CidadeFornec IS NOT NULL;
 
 SELECT MAX(QtdeEmbarq) FROM Embarq;
 
-SELECT NomeFornec, SUM(QtdeEmbarq) FROM Fornec INNER JOIN Embarq ON Fornec.CodFornec = Embarq.CodFornec GROUP BY Fornec.CodFornec;
+SELECT CodFornec, count(QtdeEmbarc) FROM tb_embarq GROUP BY CodFornec;
 
-SELECT NomeFornec, COUNT(QtdeEmbarq) FROM Fornec INNER JOIN Embarq ON Fornec.CodFornec = Embarq.CodFornec AND Embarq.QtdeEmbarq > 300 GROUP BY Fornec.CodFornec;
+SELECT NomeFornec, COUNT(QtdeEmbarq) FROM Fornec INNER JOIN Embarq ON Fornec.CodFornec = Embarq.CodFornec WHERE Embarq.QtdeEmbarq > 300 GROUP BY Fornec.CodFornec;
 
 SELECT NomeFornec, SUM(QtdeEmbarq) FROM Fornec INNER JOIN Embarq ON Fornec.CodFornec = Embarq.CodFornec INNER JOIN Peca ON Embarq.CodPeca = Peca.CodPeca WHERE CorPeca = 'Cinza' GROUP BY Fornec.CodFornec;
 
