@@ -47,8 +47,8 @@ public class JogoDaoImp implements JogoDao {
 		while (rs.next()) {
 		 jogo.setNome(rs.getString("NOME_JOGO"));
 		 jogo.setDificuldade(nomeParaEnum(rs.getString("DIFICULDADE_JOGO")));
-		 rs.close();
 		}
+		rs.close();
 		stmt.close();
 		con.close();
 		return jogo;
