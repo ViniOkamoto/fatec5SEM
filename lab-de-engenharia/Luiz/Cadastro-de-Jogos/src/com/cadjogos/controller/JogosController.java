@@ -32,7 +32,6 @@ public class JogosController extends HttpServlet{
 		
 		try {
 			jogoDaoImpl.cadastrarJogo(jogo);
-			System.out.println("Jogo cadastrado");
 			
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();
@@ -46,7 +45,6 @@ public class JogosController extends HttpServlet{
 		
 		
 		}catch(Exception e){
-			System.out.println("Erro ao cadastrar jogo:");
 			
 			res.setContentType("text/html");
 			PrintWriter out = res.getWriter();
@@ -61,7 +59,38 @@ public class JogosController extends HttpServlet{
 		}
 	}
 	
-	
+	@Override
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException { 
+		Jogo jogo = new Jogo();
+		
+		jogo.setNome(req.getParameter("nomeJogoBusca"));
+		
+		try {
+			jogo = jogoDaoImpl.pesquisarJogo(jogo.getNome());
+			
+			res.setContentType("text/html");
+			PrintWriter out = res.getWriter();
+			out.println("<html>");
+			out.println("<body>");
+			out.println("<h1>JOGO ENCONTRADO!</h1>");
+			out.println("<h4> Nome do Jogo: " + jogo.getNome() + "</h4>");
+			out.println("<h5> Dificuldade do Jogo: " + jogo.getDificuldade().toString() + "</h5>");
+			out.println("</body>");
+			out.println("</html>");
+			out.flush();
+		}
+		catch(Exception e){
+			res.setContentType("text/html");
+			PrintWriter out = res.getWriter();
+			out.println("<html>");
+			out.println("<body>");
+			out.println("<h1> JOGO NAO ENCONTRADO</h1>");
+			out.println("<h2> ERRO - JOGO NAO EXISTE NO SISTEMA</h2>");
+			out.println("</body>");
+			out.println("</html>");
+			out.flush();
+		}
+	}
 	
 	
 	//Conversao String para Enum
