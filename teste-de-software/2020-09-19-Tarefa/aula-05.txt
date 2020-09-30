@@ -1,0 +1,45 @@
+Aula 05
+
+1) Fundamentos de teste - falta de percepção das empresas em relação ao CQ, a maioria dos erros e falhas são previsíveis, custos do retralho não são mensurados
+2) Atividades Controle de Qualidade no Processo de Desenvolvimento de Software
+3) Estratégia de teste
+
+
+
+Resumo
+A tese de mestrado analisa, dentro do escopo da linguagem Java, a atuação dos frameworks de teste BDD em relação ao JUnit.
+Foi feito um estudo de caso com duas empresas, onde a empresa A utilizou Spock e Spectrum e a empresa B utilizou o Spock - todos frameworks BDD -, em comparação com o JUnit.
+Como resultado, ao final da tese, o autor ressalta que os testes BDD obtiveram melhor resultado, num geral, com relação ao JUnit e que, ainda, o Spock se mostrou a melhor ferramenta de teste na análise. Os principais aspectos considerados para o estudo foram curva de aprendizado, casos de teste mais granulares, facilidade de estruturação do teste, codificação de teste mais agradável, output mais informativo, testes mais manuteníveis, testes melhor documentados e melhor suporte de ferramentas do framework.
+
+A. R. Cisneros, L., I. Maximiano, C, Quiña, M, J.,
+
+Cisneros, L., Maximiano, M., Reis, C.
+
+
+Ahonen, Antti. Unit and Integration Testing of Java:JVM Behavior-Driven Development testing frame-works vs. JUnit. Aalto University School of Science. 2017.
+
+ onde o time deveria implementar um projeto Spring primeiramente com testes unitários e de integração com a ferramenta JUnit. 
+Teste de implementação 
+estudo de caso
+1) utilizou um framework BDD de teste ao invés do JUnit
+O teste BDD se destacou em comparação com o JUnit
+melhor qualidade de escrita com relação ao JUnit
+Curva de aprendizado nao apresentou melhor ou pior em nenhum dos casos
+A tese evidencia que um framework BDD pode ser mais efetivo para manter a manutenibilidade e a legibilidade de testes de unidade e teste de integração.
+
+autores costumam usar os xUnit based tests que possuem baixa automação
+
+As comparações feitas foram curva de aprendizado, casos de teste mais granulares, mais fáceis de serem estruturados, entendidos, 
+
+As ferramentas utilizadas foram JUnit, Spock, Spectrum, RSpec
+
+BDD is seen as an evolution of TDD and ATDD [
+
+
+https://aaltodoc.aalto.fi/handle/123456789/27045
+
+O artigo apresenta uma análise de três casos de desenvolvimento de teste se assemelha ao artigo analisado por mim quando tratamos de BDD. Os pontos foram bem explicados, o que facilita a compreensão da análise de casos.
+
+
+ é semelhante ao artigo analisado por mim, pois aborda 
+
