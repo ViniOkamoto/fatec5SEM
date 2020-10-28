@@ -50,7 +50,7 @@ SELECT Nomedisc
 FROM PreReq,
 Disciplina
 WHERE Disciplina.CodDepto=PreReq.CodDepto
-AND Disciplina.NumDisc=PreReq.NumDisc 
+AND Disciplina.NumDisc=PreReq.NumDisc;  
 
 /*12. Obter o nome de cada disciplina que possui ao menos dois pré-requisitos.*/
 SELECT DISTINCT NomeDisc
@@ -61,5 +61,5 @@ WHERE Disciplina.CodDepto=Pre1.CodDepto
 AND Disciplina.NumDisc=Pre1.NumDisc
 AND Disciplina.CodDepto=Pre2.CodDepto
 AND Disciplina.NumDisc=Pre2.NumDisc
-AND (Pre1.CodDeptoPreReq<>Pre2.CodDeptoPreReq;
-OR Pre1.NumDiscPreReq<>Pre2.NumDiscPreReq)
+AND (Pre1.CodDeptoPreReq<>Pre2.CodDeptoPreReq
+OR Pre1.NumDiscPreReq<>Pre2.NumDiscPreReq);
