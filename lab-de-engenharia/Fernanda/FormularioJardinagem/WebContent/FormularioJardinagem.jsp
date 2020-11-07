@@ -65,8 +65,7 @@
 		</div>
 
 		<div>
-			<label for="ferramentas">Ferramentas: </label>
-			<ul>
+			<label for="ferramentas">Ferramentas: </label><br>
 				<input type="checkbox" id="pa" name="ferramentas" value="pa">
 				<label for="pa">Pá</label>
 				<br>
@@ -98,12 +97,11 @@
 				<label for="luvas">Luvas</label>
 				<br>
 				<br>
-			</ul>
 		</div>
 
 		<div>
 			<label for="ferramentas">Insumos (colocar a quantidade): </label>
-			<ul>
+				<br>
 				<input type="text" id="pa" class="input-primary" name="ferramentas"
 					value="">
 				<label for="pa">Pá</label>
@@ -139,12 +137,12 @@
 				<label for="luvas">Luvas</label>
 				<br>
 				<br>
-			</ul>
+
 		</div>
 
 		<div>
 			<label for="sementes">Sementes (colocar a quantidade): </label>
-			<ul>
+			    <br>
 				<input type="text" id="melancia" class="input-primary"
 					name="sementes" value="">
 				<label for="melancia">Melancia</label>
@@ -179,10 +177,9 @@
 					value="">
 				<label for="cebola">Cebola</label>
 				<br>
-			</ul>
 		</div>
 		
-		<div name="cadastro-comprador">
+		<div>
 			<label for="dados-comprador">Dados do comprador: </label><br> <label
 				for="nome">Nome:</label> <input type="text" id="nome" name="nome"
 				value=""> <label for="nascimento">Nascimento:</label> <input
