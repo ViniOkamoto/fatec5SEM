@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.List, entities.Aluno"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>ALUNO</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,6 +13,18 @@
 
 	<div class="container">
 	<h1>Registro de alunos</h1>
+	
+	<%
+			List<Aluno> lista = (List<Aluno>)session.getAttribute("ALUNOS");
+			String msg = (String)session.getAttribute("MENSAGEM");
+			if (msg != null) {
+		%>
+				<div class="alert alert-success" role="alert">
+	  				<h4 class="alert-heading">Comando executado</h4>
+	  				<p><%=msg%></p>
+	  			</div>
+		<% 		session.setAttribute("MENSAGEM", null);
+			} %>
 	
 	<hr>
 		<form method="post" action="./AlunoController">
@@ -50,6 +63,32 @@
 	</form>
 	</div>
 	
+	<% if (lista != null && !lista.isEmpty()) {%>
+		<div class="container">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>RA</th>
+						<th>NOME</th>
+						<th>IDADE</th>
+						<th>SEXO</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for (Aluno l : lista) {%>
+						<tr>
+							<td><%=l.getId()%></td>
+							<td><%=l.getRa()%></td>
+							<td><%=l.getNome()%></td>
+							<td><%=l.getIdade()%></td>
+							<td><%=l.getSexo()%></td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+	<% } %>
 	
 </body>
 </html>
