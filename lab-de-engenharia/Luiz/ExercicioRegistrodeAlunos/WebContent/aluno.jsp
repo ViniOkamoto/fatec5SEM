@@ -44,7 +44,7 @@
 		</select>
 		</div>
 		
-		<button type="submit" class="btn btn-primary" name="cmd" value="salvar"> ADICIONAR</button>
+		<button type="submit" class="btn btn-primary" name="cmd" value="adicionar"> ADICIONAR</button>
 		<button type="submit" class="btn btn-primary" name="cmd" value="pesquisar"> PESQUISAR</button>
 	
 	</form>

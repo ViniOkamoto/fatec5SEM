@@ -22,7 +22,7 @@ public class AlunoController extends HttpServlet{
 		List<Aluno> lista = (List<Aluno>)app.getAttribute("ALUNOS"); 
 		if(lista==null){
 			lista = new ArrayList();
-			app.setAttribute("LIVROS", lista);
+			app.setAttribute("ALUNOS", lista);
 		}
 		
 		String acao = req.getParameter("cmd");
@@ -31,7 +31,7 @@ public class AlunoController extends HttpServlet{
 		try {
 			a.setId(Long.parseLong(req.getParameter("id")));
 			a.setRa(req.getParameter("ra"));
-			a.setNome(req.getParameter("sexo"));
+			a.setNome(req.getParameter("nome"));
 			a.setIdade(Integer.parseInt(req.getParameter("idade")));
 			a.setSexo(req.getParameter("sexo"));
 		}catch (Exception e) {
@@ -54,7 +54,7 @@ public class AlunoController extends HttpServlet{
 			msg = String.format(
 					"Foram localizados %d alunos com este  %s", 
 					localizados.size(), a.getRa());
-			session.setAttribute("LIVROS", localizados);
+			session.setAttribute("ALUNOS", localizados);
 		}
 		System.out.println(msg);
 		session.setAttribute("MENSAGEM", msg);
